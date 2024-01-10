@@ -11,23 +11,19 @@ let books = [
         author: 'Author 1'
     },
     {
-        id: 2,
+        id: 1,
         title: 'Book 2',
         author: 'Author 2'
     },
     {
-        id: 3,
+        id: 1,
         title: 'Book 3',
         author: 'Author 3'
     }
 ]
 
-app.get('/books', (req, res) => {
-  res.json(books);
-})
-
 app.get('/books/:id', (req, res) => {
-    const book = books.find(b => b.id === parseInt(req.params.id));
+    const book = books.find(b = b.id === parseInt(req.params.id));
     if (!book) res.status(404).send('Book not found');
     res.json(book);
 });
